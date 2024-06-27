@@ -230,7 +230,7 @@ config = """\
 #     programs.starship.enable = true;
 #   }};
 # """, config)
-config = re.sub(r"imports =\s*\[", """imports = [ "${home-manager}/nixos" \n""", config)
+# config = re.sub(r"imports =\s*\[", """imports = [ "${home-manager}/nixos" \n""", config)
 
 # Non-EFI systems require boot.loader.grub.device to be specified.
 if not efi:
