@@ -214,20 +214,22 @@ config = """\
 
 """ + config
 
+# TODO AKM 20240627 add home-manager implementation; removed because this causes an error
+#    when running this script
 # home-manager
-config = re.sub(r"{ config, pkgs, \.\.\. }:\s+{", f"""\
-{{ config, pkgs, ...}}:
-
-let
-  home-manager = fetchTarball "https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz";
-in
-{{
-  # Your home-manager configuration! Check out https://rycee.gitlab.io/home-manager/ for all possible options.
-  home-manager.users.{username} = {{ pkgs, ... }}: {{
-    home.packages = with pkgs; [ hello ];
-    programs.starship.enable = true;
-  }};
-""", config)
+# config = re.sub(r"{ config, pkgs, \.\.\. }:\s+{", f"""\
+# {{ config, pkgs, ...}}:
+# 
+# let
+#   home-manager = fetchTarball "https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz";
+# in
+# {{
+#   # Your home-manager configuration! Check out https://rycee.gitlab.io/home-manager/ for all possible options.
+#   home-manager.users.{username} = {{ pkgs, ... }}: {{
+#     home.packages = with pkgs; [ hello ];
+#     programs.starship.enable = true;
+#   }};
+# """, config)
 config = re.sub(r"imports =\s*\[", """imports = [ "${home-manager}/nixos" \n""", config)
 
 # Non-EFI systems require boot.loader.grub.device to be specified.
