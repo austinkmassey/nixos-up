@@ -23,6 +23,21 @@
           ];
           shellHook = "exec python3 ${./nixos-up.py}";
 	};
-     });
+      });
+      templates = {
+        minimal = {
+          description = ''
+            Minimal flake - minimum to migrate your existing legacy configs to flakes
+          '';
+          path = ./minimal;
+        };
+        standard = {
+          description = ''
+            Standard flake - boilerplate for custom packages, overlays, and reusable modules
+          '';
+          path = ./standard;
+        };
+      };
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
   };
 }
