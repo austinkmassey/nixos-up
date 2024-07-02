@@ -194,7 +194,7 @@ if efi:
   run(["mkdir", "-p", "/mnt/boot"])
   run(["mount", "/dev/disk/by-label/boot", "/mnt/boot"])
 
-run(["nix", "flake", "init", "-t", "github:austinkmassey/nixos-up/feature-installs-from-flake#nix_sandbox", "--extra-experimental-features", "nix-command", "--extra-experimental-features", "flakes"])
+run(["nix", "flake", "init", "-t", "github:austinkmassey/nixos-up/feature-installs-from-flake#sandbox", "--extra-experimental-features", "nix-command", "--extra-experimental-features", "flakes"])
 
 # Finally do the install!
 run(["nix-install", "--no-root-passwd", "--flake .#sandboxer"])
