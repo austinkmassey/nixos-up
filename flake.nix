@@ -25,6 +25,12 @@
 	};
       });
       templates = {
+        sandbox = {
+          description = ''
+            Sandbox flake - flake to try new commands, features, or for development
+          '';
+          path = ./sandbox;
+        };
         minimal = {
           description = ''
             Minimal flake - minimum to migrate your existing legacy configs to flakes
