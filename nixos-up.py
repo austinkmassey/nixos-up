@@ -198,7 +198,7 @@ run(["nix", "flake", "init", "-t", "github:austinkmassey/nixos-up/feature-instal
 
 run(['nixos-generate-config', '--dir', 'nixos', '--force'])
 # Finally do the install!
-run(["nix-install", "--no-root-passwd", "--flake .#sandbox"])
+run(["nixos-install", "--no-root-passwd", "--flake .#sandbox"])
 
 print("""
 ================================================================================
