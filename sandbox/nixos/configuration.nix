@@ -62,7 +62,7 @@
   # FIXME: Add the rest of your current configuration
 
   # TODO: Set your hostname
-  networking.hostName = "nix_sandbox";
+  networking.hostName = "sandbox";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -91,7 +91,12 @@
       # Remove if you want to SSH using passwords
       PasswordAuthentication = false;
     };
-  };
+  };_
+
+  # TODO Hardcoded values
+  boot.loader.grub.device = "/dev/sda"
+  #swapDevices = [ {{ device = "/swapfile"; size = {swap_mb}; }} ];
+  time.timeZone = "America/Chicago"
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
