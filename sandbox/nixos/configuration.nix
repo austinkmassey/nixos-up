@@ -94,10 +94,12 @@
   };_
 
   # TODO Hardcoded values
-  boot.loader.grub.device = "/dev/sda"
-  #swapDevices = [ {{ device = "/swapfile"; size = {swap_mb}; }} ];
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.grub.device = "/dev/sda"
+  swapDevices = [ { device = "/swapfile"; size = 1024; } ];
   time.timeZone = "America/Chicago"
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
+  system.stateVersion = "24.05";
 }
