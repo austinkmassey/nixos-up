@@ -196,7 +196,7 @@ if efi:
 
 run(["nix", "flake", "init", "-t", "github:austinkmassey/nixos-up/feature-installs-from-flake#sandbox", "--extra-experimental-features", "nix-command", "--extra-experimental-features", "flakes"])
 
-run(['nixos-generate-config', '--dir', 'nixos'])
+run(['nixos-generate-config', '--dir', 'nixos', '--root', '/mnt'])
 # Finally do the install!
 run(["nixos-install", "--no-root-password", "--flake", ".#sandbox"])
 
