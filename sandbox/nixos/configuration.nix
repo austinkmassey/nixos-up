@@ -91,14 +91,14 @@
       # Remove if you want to SSH using passwords
       PasswordAuthentication = false;
     };
-  };_
+  };
 
   # TODO Hardcoded values
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   #boot.loader.grub.device = "/dev/sda"
   swapDevices = [ { device = "/swapfile"; size = 1024; } ];
-  time.timeZone = "America/Chicago"
+  time.timeZone = "America/Chicago";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
