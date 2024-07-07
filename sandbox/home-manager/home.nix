@@ -29,7 +29,6 @@
   # home.packages = with pkgs; [ steam ];
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
@@ -37,6 +36,7 @@
     # You can also split up your configuration and import pieces of it here:
     ../neovim
     ../nb
+    ../git
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
