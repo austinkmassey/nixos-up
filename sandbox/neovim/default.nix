@@ -15,6 +15,6 @@
         set softtabstop=0 "Use same length as 'tabstop'
         set shiftwidth=0 "Use same length as 'tabstop'
 
-    ''
+    '';
   };
 }
