@@ -26,8 +26,8 @@
           ./nixos/configuration.nix
 	  home-manager.nixosModules.home-manager {
             home-manager.useUserPackages = true;
-	    home-manager.users.sandboxer = import ./home-manager/home.nix
-	  };
+	    home-manager.users.sandboxer = import ./home-manager/home.nix;
+	  }
 	];
       };
     };
