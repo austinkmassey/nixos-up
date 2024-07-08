@@ -5,10 +5,8 @@
 }: {
   programs.bash = {
     enable = true;
+    initExtra = ''
+	set -o vi
+    '';
   };
-
-  home.file = [
-     ".bash_profile".source = ./bash_profile;
-     ".bashrc".source = ./bashrc;
-  ];
 }
