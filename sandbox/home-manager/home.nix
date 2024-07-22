@@ -28,10 +28,6 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
-  home.keyboard.options = [
-      "caps:swapescape"
-  ];
-
   programs.home-manager.enable = true;
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
@@ -45,5 +41,5 @@
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
+  home.stateVersion = "24.05";
 }

@@ -4,7 +4,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
   ];
@@ -45,7 +46,7 @@
     sandboxer = {
       isNormalUser = true;
       extraGroups = ["wheel"];
-      initialPassword = "correcthorsebatterystaple";
+      initialPassword = "horsebattery";
       openssh.authorizedKeys.keys = [];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
     };
@@ -64,6 +65,21 @@
       PasswordAuthentication = true;
     };
   };
+
+  services.keyd = {
+    enable = true;
+    keyboards.default = {
+      ids = [ "*" ];
+      settings = {
+        main = {
+	  capslock = "overload(control, esc)";
+	  esc = "capslock";
+	};
+      };
+    };
+  };
+  users.groups.keyd = {};
+  systemd.services.keyd.serviceConfig.CapabilityBoundingSet = ["CAPSETGID" ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
